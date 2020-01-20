@@ -10,8 +10,3 @@ spring:
         database-platform: org.hibernate.dialect.MySQL57Dialect
         generate-ddl: true
         show-sql: true
-
-logging:
-    level:
-        org:
-           springframework=DEBUG
