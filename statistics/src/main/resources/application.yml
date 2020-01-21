@@ -1,17 +1,30 @@
+server:
+   port: 9001 #default port where the service will be started
+eureka: #tells about the Eureka server details and its refresh time
+   instance:
+      leaseRenewalIntervalInSeconds: 1
+      leaseExpirationDurationInSeconds: 2
+   client:
+      serviceUrl:
+         defaultZone: http://127.0.0.1:8761/eureka/
+      healthcheck:
+         enabled: true
+      lease:
+         duration: 5
+management:
+   security:
+      enabled: false #disable the spring security on the management endpoints like /env, /refresh etc. 
 spring:
-    datasource:
-        url: jdbc:mysql://localhost:3306/microapp?allowPublicKeyRetrieval=true&useSSL=false
-        username: root
-        password: system
-        platform: mysql
-    jpa:
-        hibernate:
-            ddl-auto: update
-        database-platform: org.hibernate.dialect.MySQL57Dialect
-        generate-ddl: true
-        show-sql: true
-
-logging:
-    level:
-        org:
-           springframework=DEBUG
+   application:
+      name: statistics-service
+   datasource:
+      url: jdbc:mysql://localhost:3306/microapp?allowPublicKeyRetrieval=true&useSSL=false
+      username: root
+      password: system
+      platform: mysql
+   jpa:
+      hibernate:
+         ddl-auto: update
+      database-platform: org.hibernate.dialect.MySQL57Dialect
+      generate-ddl: true
+      show-sql: true

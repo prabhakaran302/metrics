@@ -1,5 +1,13 @@
 package com.metrics.account.model;
 
-public class Account {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+import lombok.Data;
+
+@Entity
+@Data
+public class Account {
+	@Id
+	private Long id;
 }
